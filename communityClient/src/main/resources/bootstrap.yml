@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: communityclient
+  cloud:
+    config:
+#      uri: http://localhost:8000
+      discovery:
+        enabled: true
+        service-id: config
+server:
+  port: 8888
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eurekaservice/eureka
+
+feign:
+  httpclient:
+    enabled: true
+  hystrix:
+    enabled: true
